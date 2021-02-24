@@ -55,7 +55,7 @@ class Game {
       var index = 0;
 
       //x and y position of the cars
-      var x = 175 ;
+      var x = 185;
       var y;
 
       for(var plr in allPlayers){
@@ -69,10 +69,15 @@ class Game {
         cars[index-1].x = x;
         cars[index-1].y = y;
 
+
         if (index === player.index){
+         console.log(x);
           cars[index - 1].shapeColor = "red";
           camera.position.x = displayWidth/2;
           camera.position.y = cars[index-1].y;
+          stroke(10);
+          fill("red");
+          ellipse(x,y,60,60);
         }
        
         //textSize(15);
@@ -86,7 +91,7 @@ class Game {
       player.update();
     }
 
-    if(player.distance > 3860){
+    if(player.distance > 4200){
       gameState = 2;
     }
    
